@@ -7,11 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:push":"npx drizzle-kit push"
+    "db:push": "npx drizzle-kit push"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.797.0",
     "@clerk/nextjs": "^6.18.0",
     "@radix-ui/react-slot": "^1.2.0",
+    "@tanstack/react-query": "^5.74.4",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.5.0",
@@ -21,6 +25,8 @@
     "pg": "^8.15.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-hot-toast": "^2.5.2",
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {

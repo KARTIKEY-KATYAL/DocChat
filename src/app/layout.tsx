@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Inter } from "next/font/google";
 import {
   ClerkProvider,
   SignInButton,
@@ -8,6 +8,8 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import Providers from "@/components/Provider";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +21,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DocChat",
@@ -32,13 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
-          {children}
-        </body>
-      </html>
+      <Providers>
+        <html lang="en">
+          <body className={inter.className}>{children}</body>
+          <Toaster />
+        </html>
+      </Providers>
     </ClerkProvider>
   );
 }
