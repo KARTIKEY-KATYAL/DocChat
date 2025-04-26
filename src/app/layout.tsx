@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import {
   ClerkProvider,
   SignInButton,
@@ -38,8 +38,10 @@ export default function RootLayout({
     <ClerkProvider>
       <Providers>
         <html lang="en">
-          <body className={inter.className}>{children}</body>
-          <Toaster />
+          <body className={inter.className}>
+            {children}
+            <Toaster />
+          </body>
         </html>
       </Providers>
     </ClerkProvider>
