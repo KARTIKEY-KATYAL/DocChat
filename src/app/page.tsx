@@ -6,8 +6,8 @@ import FileUpload from "@/components/FileUpload";
 import Link from "next/link";
 
 export default async function Home() {
-  const {userid} = await auth()
-  const isAuth = !!userid
+  const { userId } = await auth();
+  const isAuth = !!userId;
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155]">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -18,10 +18,10 @@ export default async function Home() {
             </h1>
             <UserButton afterSignOutUrl="/" />
           </div>
-          <div className="flex mt-2">
-            {isAuth && <Button>Go to Chats</Button>}
+          <div className="flex mt-4">
+            {isAuth && <Button className="cursor-pointer">Go to Chats</Button>}
           </div>
-          <p className="max-w-xl mt-1 text-lg text-slate-50">
+          <p className="max-w-xl mt-2 text-lg text-slate-50">
             Join millions of students, researchers and professionals to
             instantly answer questions and understand research with AI
           </p>
